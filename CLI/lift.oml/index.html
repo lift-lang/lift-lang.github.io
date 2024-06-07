@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>lift.toml - Lift Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "lift.toml";
+        var mkdocs_page_input_path = "CLI/lift.oml.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Lift Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">CLI</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">lift.toml</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#disclaimer">Disclaimer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tables">Tables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project">Project</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#name">Name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#version">Version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#type">Type</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repository">Repository</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#files">Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#source-directories">Source Directories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#library-directories">Library Directories</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#people">People</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#peopleauthor">People.Author</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#peoplecontributor">People.Contributor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Lift Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">CLI</li>
+      <li class="breadcrumb-item active">lift.toml</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="lifttoml">lift.toml</h1>
+<p><code>lift.toml</code> is the configuration file of the project.</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>It is recommended to read the <a href="https://toml.io/en/v1.0.0">TOML 1.0.0 spec</a> before reading this documentation.</p>
+<h2 id="tables">Tables</h2>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#project">Project</a></td>
+<td>Contains general information about the project (name, type, version, etc.)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="#files">Files</a></td>
+<td>Contains various paths needed to run the application</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="#people">People</a></td>
+<td>Contains information about the author as well as contributors</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="project">Project</h2>
+<p>The project table is declared with <code>[project]</code> and contains general information about the project.</p>
+<h3 id="name">Name</h3>
+<p>The name of the project.<br>
+Restrictions:<br>
+- Must not contain any uppercase letters or special characters, except '-' and '.'</p>
+<p>Example:<br>
+<code>name = "project-name"</code></p>
+<h3 id="version">Version</h3>
+<p>A SemVer 2.0.0 compliant version string.<br>
+Example:<br>
+<code>version = "1.2.3-alpha"</code></p>
+<h3 id="type">Type</h3>
+<p>The project type, can be one of the following:
+- executable
+- library</p>
+<p>Example:<br>
+<code>type = "executable"</code></p>
+<h3 id="repository">Repository</h3>
+<p>The repository in which your code is stored.<br>
+Example:<br>
+<code>repository = "https://github.com/lift-lang/lift"</code></p>
+<h2 id="files">Files</h2>
+<p>The files table is declared with <code>[files]</code> and contains paths vital to running the project.</p>
+<h3 id="source-directories">Source Directories</h3>
+<p>The source directories are directories containing source files of the project, and will also implicitly be declared as import directories. These source files will also be searched for the entry point, so having the containing folder of your entry point as a source directory is necessary.<br>
+Example:<br></p>
+<pre><code class="language-toml">src_dirs = [
+    &quot;src&quot;
+]
+</code></pre>
+<h3 id="library-directories">Library Directories</h3>
+<p>The library directories are directories containing lift library files, and will also implicitly be declared as import directories.<br>
+Example:<br></p>
+<pre><code class="language-toml">lib_dirs = [
+    &quot;lib&quot;
+]
+</code></pre>
+<h2 id="people">People</h2>
+<p>The people table contains person objects, split into author and contributors, defined as such:<br></p>
+<pre><code class="language-toml">name = &quot;Name&quot;
+email = &quot;example@mail.com&quot;
+website = &quot;example.com&quot;
+</code></pre>
+<p>Every property except the name is optional.</p>
+<h3 id="peopleauthor">People.Author</h3>
+<p>The author table is declared with <code>[people.author]</code> and there can only be one. It contains a person object.</p>
+<h3 id="peoplecontributor">People.Contributor</h3>
+<p>The contributor tables are declared with <code>[[people.contributor]]</code> and there can be multiple, each containing a person object.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
